@@ -1,0 +1,26 @@
+
+
+**Prompt:**
+“I am creating a Smart Finance Assistant and writing code to test the AI connection. I want a shorter, cleaner, and more aesthetic version of the code.”
+
+**AI Response Summary:**
+The AI suggested simplifying the connection testing code by:
+
+* reducing unnecessary comments,
+* improving console messages,
+* adding cleaner fallback handling,
+* and making the output more professional and visually organized.
+
+**Example Improvement Provided by AI:**
+
+```python
+print("🔄 Connecting to AI...\n")
+
+if "Error" in str(response):
+    print("⚠️ AI unavailable — switching to offline mode.\n")
+```
+
+**How It Helped the Project:**
+The AI helped improve code readability and user experience by making the connection test cleaner, easier to understand, and more visually appealing for beginner-level Python development.
+
+
