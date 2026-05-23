@@ -38,3 +38,42 @@ Additional Business Logic Suggestions:
 
 **How It Helped the Project:**
 The AI helped strengthen the project algorithm by identifying realistic financial edge cases and suggesting more intelligent business logic. These improvements made the Smart Finance Assistant more practical, reliable, and capable of generating meaningful personal finance insights for users.
+
+### AI Conversation Evidence
+
+**Prompt 6:**
+“I'm implementing a Smart Finance Assistant. Based on my pseudocode, please create a Python function that analyzes spending data from a CSV file. The code should handle real-world CSV data issues, include clear comments, use professional variable names, format output for business presentation, and include basic error handling.”
+
+**AI Response Summary:**
+The AI generated a Python function for the Smart Finance Assistant that:
+
+* loads and validates CSV transaction data,
+* cleans financial values such as dollar signs and missing data,
+* separates spending and refunds,
+* calculates category-based spending summaries,
+* and generates business-friendly financial insights.
+
+The AI then helped simplify and improve the code by creating a shorter and more visually appealing version while still maintaining:
+
+* professional structure,
+* readable comments,
+* financial calculations,
+* and basic error handling.
+
+**Example Improvement Provided by AI:**
+
+```python id="2k1qzb"
+# Business calculations
+total_spending = spending["Amount"].sum()
+
+average_transaction = spending["Amount"].mean()
+
+category_totals = (
+    spending.groupby("Category")["Amount"]
+    .sum()
+    .sort_values(ascending=False)
+)
+```
+
+**How It Helped the Project:**
+The AI helped transform the spending analysis pseudocode into a practical Python implementation suitable for a Smart Finance Assistant project. The improved version made the code cleaner, easier to understand, and more visually professional while still supporting realistic financial data processing and business insight generation.
