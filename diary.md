@@ -72,35 +72,100 @@ This discussion helped me narrow the project scope and focus on a more realistic
 
 I also learned that defining the business problem clearly before coding makes it easier to design the system features later.
 
-### Entry 3 – Business Context in AI Interactions
-**Artifact:** Screenshot of Gemini generating financial insights from data.
+## Entry 3 – Identifying System Inputs and Outputs
 
-**Context:** I wanted AI to help generate business recommendations from spending analysis.
+### Artifact
+Week 10 AI conversation evidence 
 
-**My Prompt:** "Based on this spending analysis showing Groceries: $450, Dining: $380, Coffee: $120, Transport: $95, create business insights and savings recommendations that sound professional for a personal finance app."
+### Context
+This week I focused on planning the core structure of the Smart Finance Assistant. I wanted to understand what financial data the system should collect and what outputs would provide the most useful budgeting insights for users.
 
-**AI Response:** Generated specific recommendations like "Consider meal planning to reduce dining expenses" and "Coffee purchases represent 8% of total spending - consider brewing at home."
+### Prompt
+“For a personal finance assistant that analyzes CSV transaction data, what are the most valuable inputs I should collect and outputs I should provide? Consider both technical data processing and business value for the user.”
 
-**Reflection:** When I include business context and specify the audience (personal finance app users), AI generates much more relevant and professional output. I learned that framing requests in business terms gets business-quality responses. Now I always think about who will read the output and what decisions they need to make.
+### AI Response Summary
+The AI suggested important system inputs and outputs for the project. It recommended collecting transaction details such as dates, amounts, categories, descriptions, and budget limits to support financial analysis.
+
+The AI also suggested useful outputs including:
+- spending summaries,
+- overspending detection,
+- spending trends,
+- budgeting insights,
+- and personalized financial recommendations.
+
+The discussion helped refine the system into a budgeting assistant focused on helping university students better manage their monthly spending.
+
+### Example Improvement
+- Inputs:
+
+CSV file containing bank transaction data
+(columns: Date, Amount, Category, Description)
+
+Student budget limits for different spending categories
+(e.g., food, entertainment, transport)
+
+Selected time period for analysis
+(weekly or monthly)
+
+- Outputs:
+
+Monthly spending summary by category
+
+Overspending detection compared to budget limits
+
+Simple financial recommendations for improving budgeting habits
+### Reflection
+
+This conversation helped me better understand the relationship between financial data inputs and meaningful business outputs. Before this discussion, I was mainly thinking about the technical side of the project, but the AI helped me focus more on what information would actually be useful for users.
+
+I also learned that designing clear inputs and outputs early makes it easier to structure the financial analysis functions later in development.
 
 ---
 
-### Entry 4 – Data Quality and Edge Cases
-**Artifact:** Screenshot of debugging session with Claude about handling messy CSV data.
+## Entry 4 – Creating Realistic Financial Examples
 
-**Context:** My CSV had negative amounts (refunds) and missing values that broke my calculations.
+### Artifact: Screenshot of debugging session with Claude about handling messy CSV data.
 
-**My Problem:** "My spending analysis is giving wrong totals because some amounts are negative (refunds) and some cells are empty."
+### Context: I wanted to create realistic financial examples for testing and demonstrating the Smart Finance Assistant. My goal was to better understand how transaction data could be analyzed to generate useful budgeting insights.
 
-**AI Solution:** Helped me add data validation:
-```python
-# Handle refunds and missing data appropriately
-df_clean = df.dropna(subset=['Amount_Clean'])
-positive_spending = df_clean[df_clean['Amount_Clean'] > 0]
-refunds = df_clean[df_clean['Amount_Clean'] < 0]
-```
+### Prompt:
 
-**Reflection:** AI helped me think about real-world data issues I hadn't considered. I learned that business data is always messy and I need to ask AI specifically about edge cases like refunds, missing values, and invalid entries. This makes my finance assistant more robust for actual use.
+“Give me 3 realistic examples of Australian transaction data with different scenarios (normal spending, refunds, large purchases). Show me how to manually calculate meaningful financial insights from each scenario.”
+
+### AI Response Summary
+
+The AI generated three realistic financial scenarios involving:
+
+normal student spending,
+refund transactions,
+and large purchases.
+
+For each example, the AI provided:
+
+sample CSV-style transaction data,
+manual financial calculations,
+spending percentages,
+average transaction values,
+and financial insights explaining spending behavior.
+
+These examples helped demonstrate how transaction analysis can produce useful financial recommendations and spending awareness insights.
+
+### Example Improvement:
+Total Spending:
+$72.30 + $1,850.00 + $16.20 + $31.50 + $14.90
+= $1,984.90
+
+Electronics Spending Percentage:
+($1,850.00 ÷ $1,984.90) × 100 ≈ 93%
+
+Insight:
+The laptop purchase heavily impacted monthly spending,
+representing approximately 93% of total expenses.
+
+### Reflection: 
+This activity helped me better understand how financial insights are calculated from transaction data. Manually working through the examples made it easier to understand how the Smart Finance Assistant should process CSV files and generate spending analysis.
+
+I also learned that realistic examples make the project feel much more practical and believable compared to using random or overly simple data. The refund and large purchase examples were especially useful because they showed how unusual transactions can affect financial summaries and budgeting insights.
 
 ---
 
